@@ -277,72 +277,31 @@ table.t .g{color:var(--green);font-weight:700;}
   <div class="panel" id="my-rewards-panel">
     <div class="panel-head">
       <div class="panel-t"><span class="dot g"></span>我的奖励</div>
-
     </div>
     <div class="panel-body">
-      <div class="rcards">
-        <div class="rc">
-          <div class="rc-l">昨日有效余额</div>
-          <div class="rc-v">8,500.00<span>USDC</span></div>
-          <div class="rc-s">现货 6,200.00 + 合约 2,300.00（上限 10,000）</div>
-        </div>
-        <div class="rc featured">
-          <div class="rc-l">昨日获得奖励</div>
-          <div class="rc-v g">+2.33<span>USDC</span></div>
-          <div class="rc-s">2026-03-27 结算 · 已发放至现货账户</div>
-        </div>
-        <div class="rc">
-          <div class="rc-l">累计获得奖励</div>
-          <div class="rc-v g">+16.31<span>USDC</span></div>
-          <div class="rc-s">已参与 6 天 · 自 2026-03-23 起</div>
-        </div>
+      <div class="rc featured" style="text-align:center;padding:32px 20px;">
+        <div class="rc-l" style="font-size:12px;">累计获得奖励</div>
+        <div class="rc-v g" style="font-size:42px;margin:8px 0 4px;">+16.31<span style="font-size:14px;">USDC</span></div>
+        <div class="rc-s">已参与 6 天 · 自 2026-03-23 起</div>
       </div>
-
-      <div class="tbl-head">
-        <div class="tbl-title">奖励明细</div>
-        <div class="tbl-sub">最近 30 天</div>
+      <div class="tbl-head" style="margin-top:24px;">
+        <div class="tbl-title">每日奖励明细</div>
+        <div class="tbl-sub">按日期倒序 · 每页 10 条</div>
       </div>
       <table class="t">
-        <thead><tr>
-          <th>日期</th><th>现货余额</th><th>合约余额</th><th>有效余额</th><th>状态</th><th>奖励 (USDC)</th>
-        </tr></thead>
+        <thead><tr><th>日期</th><th>快照余额 (USDC)</th><th>现货快照 (USDC)</th><th>合约快照 (USDC)</th><th>奖励 (USDC)</th></tr></thead>
         <tbody>
-          <tr><td>2026-03-28</td><td>6,200.00</td><td>2,300.00</td><td>8,500.00</td><td><span class="badge-s"><span class="d wait"></span>结算中</span></td><td class="g">≈ 2.33</td></tr>
-          <tr><td>2026-03-27</td><td>6,200.00</td><td>2,300.00</td><td>8,500.00</td><td><span class="badge-s"><span class="d ok"></span>已发放</span></td><td class="g">+2.33</td></tr>
-          <tr><td>2026-03-26</td><td>7,800.00</td><td>2,200.00</td><td>10,000.00</td><td><span class="badge-s"><span class="d ok"></span>已发放</span></td><td class="g">+2.74</td></tr>
-          <tr><td>2026-03-25</td><td>10,000.00</td><td>3,500.00</td><td>10,000.00</td><td><span class="badge-s"><span class="d ok"></span>已发放</span></td><td class="g">+2.74</td></tr>
-          <tr><td>2026-03-24</td><td>10,000.00</td><td>0.00</td><td>10,000.00</td><td><span class="badge-s"><span class="d ok"></span>已发放</span></td><td class="g">+2.74</td></tr>
-          <tr><td>2026-03-23</td><td>4,200.00</td><td>0.00</td><td>4,200.00</td><td><span class="badge-s"><span class="d ok"></span>已发放</span></td><td class="g">+1.15</td></tr>
+          <tr><td>2026-03-28</td><td>8,500.00</td><td>6,200.00</td><td>2,300.00</td><td class="g">≈ 2.33</td></tr>
+          <tr><td>2026-03-27</td><td>8,500.00</td><td>6,200.00</td><td>2,300.00</td><td class="g">+2.33</td></tr>
+          <tr><td>2026-03-26</td><td>10,000.00</td><td>7,800.00</td><td>2,200.00</td><td class="g">+2.74</td></tr>
+          <tr><td>2026-03-25</td><td>10,000.00</td><td>10,000.00</td><td>3,500.00</td><td class="g">+2.74</td></tr>
+          <tr><td>2026-03-24</td><td>10,000.00</td><td>10,000.00</td><td>0.00</td><td class="g">+2.74</td></tr>
+          <tr><td>2026-03-23</td><td>4,200.00</td><td>4,200.00</td><td>0.00</td><td class="g">+1.15</td></tr>
         </tbody>
       </table>
       <div class="pager">
-        <div class="pg">&lt;</div><div class="pg on">1</div><div class="pg">2</div><div class="pg">3</div><div class="pg">&gt;</div>
+        <div class="pg">&lt;</div><div class="pg on">1</div><div class="pg">&gt;</div>
       </div>
-    </div>
-  </div>
-
-  <!-- ========== PANEL: 全平台奖励进度 ========== -->
-  <div class="panel" id="progress-panel">
-    <div class="panel-head">
-      <div class="panel-t"><span class="dot b"></span>全平台奖励进度</div>
-    </div>
-    <div class="stats-grid">
-      <div class="sg-item">
-        <div class="sg-num">18,472,350</div>
-        <div class="sg-label">全平台有效 USDC</div>
-      </div>
-      <div class="sg-item">
-        <div class="sg-num g">2,847</div>
-        <div class="sg-label">参与用户数</div>
-      </div>
-      <div class="sg-item">
-        <div class="sg-num">6</div>
-        <div class="sg-label">已运行天数</div>
-      </div>
-    </div>
-    <div class="progress-wrap">
-      <div class="pbar-track"><div class="pbar-fill" style="width:61.6%"></div></div>
-      <div class="pbar-info"><span>0</span><span>61.6% · 18,472,350 / 30,000,000</span><span>30,000,000</span></div>
     </div>
   </div>
 
