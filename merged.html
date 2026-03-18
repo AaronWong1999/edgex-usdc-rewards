@@ -119,21 +119,16 @@ table.t .g{color:var(--green);font-weight:700;}
 .pbar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:6px;transition:width 1s ease;}
 .pbar-info{display:flex;justify-content:space-between;font-size:11px;color:var(--t4);font-variant-numeric:tabular-nums;}
 
-/* USDC info strip in hero area */
-.usdc-strip{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:20px;}
-.us-item{display:flex;flex-direction:column;gap:3px;}
-.us-label{font-size:11px;color:var(--t4);text-transform:uppercase;letter-spacing:.8px;font-weight:500;}
-.us-val{font-size:15px;color:var(--t1);font-weight:600;}
-.us-val.accent{color:var(--green);font-size:20px;font-weight:800;}
-.hero-rules-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:20px;}
-.hr-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;font-size:13px;color:var(--t2);line-height:1.65;}
-.hr-row:last-of-type{margin-bottom:0;}
-.hr-check{color:var(--green);font-size:13px;flex-shrink:0;}
-.hr-row strong{color:var(--white);font-weight:600;}
-.hr-link{display:block;text-align:right;margin-top:12px;font-size:12px;color:var(--t3);font-weight:500;cursor:pointer;transition:color .15s;text-decoration:none;}
-.hr-link:hover{color:var(--green);text-decoration:none;}
-.cd-row{display:flex;align-items:center;gap:14px;}
-.cd-label{font-size:11px;color:var(--t4);text-transform:uppercase;letter-spacing:.5px;font-weight:500;}
+/* Hero bullets */
+.hero-bullets{margin-bottom:24px;}
+.hb{font-size:13px;color:var(--t2);line-height:1.75;padding-left:18px;position:relative;}
+.hb::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.7;}
+.hb strong{color:var(--white);font-weight:600;}
+.hb-link{display:inline-block;margin-top:10px;font-size:12px;color:var(--t3);font-weight:500;cursor:pointer;transition:color .15s;text-decoration:none;padding-left:18px;}
+.hb-link:hover{color:var(--green);text-decoration:none;}
+.cd-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.cd-time{font-size:13px;color:var(--t2);font-weight:500;margin-right:8px;}
+.cd-label{font-size:11px;color:var(--t4);letter-spacing:.5px;font-weight:500;}
 .cd-blocks{display:flex;gap:4px;}
 .cd-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 10px;text-align:center;min-width:44px;}
 .cd-cell .n{font-size:18px;font-weight:800;color:var(--white);line-height:1;font-variant-numeric:tabular-nums;}
@@ -230,27 +225,17 @@ table.t .g{color:var(--green);font-weight:700;}
       <h1 class="hero-title">edgeX × Circle: USDC Rewards Program - Season 1</h1>
       <p class="hero-sub">持有 USDC，每日获得 USDC 奖励</p>
 
-      <div class="usdc-strip">
-        <div class="us-item">
-          <span class="us-label">活动时间</span>
-          <span class="us-val">2026.03.23 00:00 — 2026.04.22 00:00 (UTC)</span>
-        </div>
-        <div class="us-item">
-          <span class="us-label">每 10,000 USDC 每日奖励</span>
-          <span class="us-val accent">≈ 2.74 USDC / 天</span>
-        </div>
-      </div>
-
-      <div class="hero-rules-box">
-        <div class="hr-row"><span class="hr-check">✓</span><span>现货账户、合约账户中的 USDC 均<strong>自动参与</strong>，无需锁仓、无需申购、无需任何操作</span></div>
-        <div class="hr-row"><span class="hr-check">✓</span><span>每个账户最多 <strong>10,000 USDC</strong> 计入奖励，全平台上限 <strong>30,000,000 USDC</strong></span></div>
-        <div class="hr-row"><span class="hr-check">✓</span><span>系统每日多次快照，取<strong>当日最低余额</strong>为有效基数，奖励次日自动到账</span></div>
-        <div class="hr-row"><span class="hr-check">✓</span><span>由 <strong>Circle 官方授权</strong>支持，奖励以 USDC 形式发放</span></div>
-        <a class="hr-link" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则 →</a>
+      <div class="hero-bullets">
+        <div class="hb">每 10,000 USDC 每日奖励 <strong>≈ 2.74 USDC</strong>，由 Circle 官方授权支持</div>
+        <div class="hb">现货 + 合约账户 USDC <strong>自动参与</strong>，无需锁仓、无需申购</div>
+        <div class="hb">每账户上限 <strong>10,000 USDC</strong>，全平台上限 <strong>30,000,000 USDC</strong></div>
+        <div class="hb">每日多次快照取<strong>最低余额</strong>为有效基数，奖励次日自动到账</div>
+        <a class="hb-link" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则 →</a>
       </div>
 
       <div class="cd-row">
-        <span class="cd-label">距活动结束</span>
+        <div class="cd-time">2026.03.23 — 2026.04.22 (UTC)</div>
+        <span class="cd-label">距结束</span>
         <div class="cd-blocks">
           <div class="cd-cell"><div class="n" id="cd-d">27</div><div class="l">天</div></div>
           <span class="cd-sep">:</span>
@@ -294,7 +279,7 @@ table.t .g{color:var(--green);font-weight:700;}
   <div class="top-tab on" onclick="switchTop('usdc')">USDC 每日奖励<span class="tag">NEW</span></div>
   <div class="top-tab" onclick="switchTop('liq')">持币奖励额度</div>
   <div class="top-tab" onclick="switchTop('unlock')">现货交易对解锁</div>
-  <div class="tab-refresh">每5分钟更新</div>
+  <div class="tab-refresh" id="tab-refresh" style="display:none;">每5分钟更新</div>
 </div>
 
 <!-- MAIN -->
@@ -435,12 +420,12 @@ table.t .g{color:var(--green);font-weight:700;}
         <div class="panel-t"><span class="dot g"></span>我的奖励</div>
       </div>
       <div class="panel-body">
-        <div class="rc featured" style="text-align:center;padding:32px 20px;">
-          <div class="rc-l" style="font-size:12px;">累计获得奖励</div>
-          <div class="rc-v g" style="font-size:42px;margin:8px 0 4px;">+16.31<span style="font-size:14px;">USDC</span></div>
-          <div class="rc-s">已参与 6 天 · 自 2026-03-23 起</div>
+        <div style="display:flex;align-items:baseline;gap:16px;padding:4px 0 20px;flex-wrap:wrap;">
+          <span style="font-size:13px;color:var(--t3);">活动期间累计获得奖励</span>
+          <span style="font-size:32px;font-weight:800;color:var(--green);letter-spacing:-.5px;">+16.31<span style="font-size:13px;font-weight:500;color:var(--t3);margin-left:4px;">USDC</span></span>
+          <span style="font-size:12px;color:var(--t4);">已参与 6 天</span>
         </div>
-        <div class="tbl-head" style="margin-top:24px;">
+        <div class="tbl-head">
           <div class="tbl-title">每日奖励明细</div>
           <div class="tbl-sub">按日期倒序 · 每页 10 条</div>
         </div>
@@ -571,9 +556,10 @@ function switchTop(id){
   var map = {usdc:0, liq:1, unlock:2};
   tabs[map[id]].classList.add('on');
   document.getElementById('tc-'+id).classList.add('show');
-  // toggle hero
+  // toggle hero + refresh label
   document.getElementById('hero-usdc').style.display = (id==='usdc') ? '' : 'none';
   document.getElementById('hero-liq').style.display = (id==='usdc') ? 'none' : '';
+  document.getElementById('tab-refresh').style.display = (id==='usdc') ? 'none' : '';
 }
 
 /* URL hash routing */
