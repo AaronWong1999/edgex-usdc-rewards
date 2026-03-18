@@ -144,6 +144,8 @@ table.t .g{color:var(--green);font-weight:700;}
 /* Rules button */
 .rules-btn{display:inline-flex;align-items:center;padding:12px 32px;background:rgba(61,255,192,.08);border:1px solid rgba(61,255,192,.2);border-radius:10px;color:var(--green);font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:4px;}
 .rules-btn:hover{background:rgba(61,255,192,.14);border-color:rgba(61,255,192,.35);}
+.deposit-btn{display:inline-flex;align-items:center;padding:12px 32px;background:var(--green);border:none;border-radius:10px;color:#000;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .15s;}
+.deposit-btn:hover{opacity:.85;}
 
 .cd-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
 .cd-label{font-size:11px;color:var(--t4);letter-spacing:.5px;font-weight:500;}
@@ -266,7 +268,10 @@ table.t .g{color:var(--green);font-weight:700;}
         <div class="hb">每账户上限 <strong>10,000 USDC</strong>，全平台上限 <strong>30,000,000 USDC</strong></div>
         <div class="hb">每日多次快照取<strong>最低余额</strong>为有效基数，奖励次日自动到账</div>
       </div>
-      <button class="rules-btn" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则</button>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
+        <button class="rules-btn" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则</button>
+        <button class="deposit-btn" onclick="window.open('https://pro.edgex.exchange/zh-CN/trade','_blank')">立即充值</button>
+      </div>
     </div>
     <div class="hero-right" style="width:340px;align-self:stretch;">
       <div class="hero-card">
