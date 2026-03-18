@@ -41,6 +41,25 @@ a:hover{text-decoration:underline;}
 .hero-title{font-size:clamp(26px,3.5vw,36px);font-weight:900;color:var(--white);line-height:1.25;margin-bottom:10px;letter-spacing:-.5px;}
 .hero-sub{font-size:15px;color:var(--t2);margin-bottom:24px;}
 .hero-right{flex-shrink:0;width:260px;display:flex;align-items:center;justify-content:center;}
+
+/* Hero stats card (MARU-style) */
+.hero-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:28px 24px;width:100%;position:relative;overflow:hidden;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--blue));}
+.hc-badge{display:inline-block;font-size:10px;font-weight:700;color:#000;background:var(--green);padding:2px 10px;border-radius:4px;margin-bottom:16px;letter-spacing:.5px;}
+.hc-label{font-size:12px;color:var(--t3);margin-bottom:4px;}
+.hc-rate{font-size:36px;font-weight:900;color:var(--white);letter-spacing:-1px;line-height:1.1;}
+.hc-rate span{font-size:14px;font-weight:500;color:var(--t3);margin-left:4px;}
+.hc-divider{height:1px;background:var(--border);margin:18px 0;}
+.hc-row{display:flex;gap:16px;}
+.hc-stat{flex:1;}
+.hc-stat-label{font-size:11px;color:var(--t4);margin-bottom:4px;white-space:nowrap;}
+.hc-stat-val{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-.3px;font-variant-numeric:tabular-nums;}
+.hc-stat-val.g{color:var(--green);}
+.hc-stat-val span{font-size:12px;font-weight:500;color:var(--t4);margin-left:2px;}
+.hc-cta{display:block;width:100%;margin-top:20px;padding:12px;background:rgba(61,255,192,.08);border:1px solid rgba(61,255,192,.2);border-radius:10px;color:var(--green);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;}
+.hc-cta:hover{background:rgba(61,255,192,.14);border-color:rgba(61,255,192,.35);}
+
+/* Hero graphic (for non-USDC hero) */
 .hero-gfx{position:relative;width:220px;height:220px;}
 .hero-gfx .ring{position:absolute;inset:0;border:2px solid rgba(61,255,192,.1);border-radius:50%;}
 .hero-gfx .ring2{position:absolute;top:36px;left:36px;right:36px;bottom:36px;background:rgba(61,255,192,.03);border:1px solid rgba(61,255,192,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;}
@@ -120,7 +139,7 @@ table.t .g{color:var(--green);font-weight:700;}
 .pbar-info{display:flex;justify-content:space-between;font-size:11px;color:var(--t4);font-variant-numeric:tabular-nums;}
 
 /* Hero bullets */
-.hero-bullets{margin-bottom:24px;}
+.hero-bullets{margin-bottom:0;margin-top:24px;}
 .hb{font-size:13px;color:var(--t2);line-height:1.75;padding-left:18px;position:relative;}
 .hb::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.7;}
 .hb strong{color:var(--white);font-weight:600;}
@@ -188,7 +207,7 @@ table.t .g{color:var(--green);font-weight:700;}
   .ft-cols{gap:24px;flex-wrap:wrap;}
   .ft-bottom{flex-direction:column;gap:12px;text-align:center;padding:0 20px 24px;}
   .nav-links{display:none;}
-  .usdc-strip{gap:16px;}
+  .hero-card{margin-top:24px;}
 }
 </style>
 </head>
@@ -222,16 +241,8 @@ table.t .g{color:var(--green);font-weight:700;}
 <section class="hero" id="hero-usdc">
   <div class="hero-inner">
     <div class="hero-left">
-      <h1 class="hero-title">edgeX × Circle: USDC Rewards Program - Season 1</h1>
+      <h1 class="hero-title">edgeX × Circle: USDC Rewards Program</h1>
       <p class="hero-sub">持有 USDC，每日获得 USDC 奖励</p>
-
-      <div class="hero-bullets">
-        <div class="hb">每 10,000 USDC 每日奖励 <strong>≈ 2.74 USDC</strong>，由 Circle 官方授权支持</div>
-        <div class="hb">现货 + 合约账户 USDC <strong>自动参与</strong>，无需锁仓、无需申购</div>
-        <div class="hb">每账户上限 <strong>10,000 USDC</strong>，全平台上限 <strong>30,000,000 USDC</strong></div>
-        <div class="hb">每日多次快照取<strong>最低余额</strong>为有效基数，奖励次日自动到账</div>
-        <a class="hb-link" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则 →</a>
-      </div>
 
       <div class="cd-row">
         <div class="cd-time">2026.03.23 — 2026.04.22 (UTC)</div>
@@ -246,12 +257,43 @@ table.t .g{color:var(--green);font-weight:700;}
           <div class="cd-cell"><div class="n" id="cd-s">08</div><div class="l">秒</div></div>
         </div>
       </div>
+
+      <div class="hero-bullets">
+        <div class="hb">每 10,000 USDC 每日奖励 <strong>≈ 2.74 USDC</strong>，由 Circle 官方授权支持</div>
+        <div class="hb">现货 + 合约账户 USDC <strong>自动参与</strong>，无需锁仓、无需申购</div>
+        <div class="hb">每账户上限 <strong>10,000 USDC</strong>，全平台上限 <strong>30,000,000 USDC</strong></div>
+        <div class="hb">每日多次快照取<strong>最低余额</strong>为有效基数，奖励次日自动到账</div>
+        <a class="hb-link" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则 →</a>
+      </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-gfx">
-        <div class="ring"></div>
-        <div class="ring2"><div class="icon">$</div></div>
-        <div class="p"></div><div class="p"></div><div class="p"></div>
+    <div class="hero-right" style="width:340px;align-self:stretch;">
+      <div class="hero-card">
+        <div class="hc-badge">Season 1</div>
+        <div class="hc-label">每 10,000 USDC 每日奖励</div>
+        <div class="hc-rate">≈ 2.74 <span>USDC / 天</span></div>
+        <div class="hc-divider"></div>
+        <div class="hc-row">
+          <div class="hc-stat">
+            <div class="hc-stat-label">活动期间累计奖励</div>
+            <div class="hc-stat-val g">+16.31 <span>USDC</span></div>
+          </div>
+          <div class="hc-stat">
+            <div class="hc-stat-label">参与天数</div>
+            <div class="hc-stat-val">6 <span>天</span></div>
+          </div>
+        </div>
+        <div class="hc-divider"></div>
+        <div class="hc-row">
+          <div class="hc-stat">
+            <div class="hc-stat-label">全平台有效 USDC</div>
+            <div class="hc-stat-val">18.47M <span>/ 30M</span></div>
+          </div>
+          <div class="hc-stat">
+            <div class="hc-stat-label">参与用户</div>
+            <div class="hc-stat-val">2,847</div>
+          </div>
+        </div>
+        <button class="hc-cta" onclick="document.getElementById('my-rewards').scrollIntoView({behavior:'smooth'})">查看我的奖励明细 ↓</button>
       </div>
     </div>
   </div>
@@ -415,17 +457,12 @@ table.t .g{color:var(--green);font-weight:700;}
   <div class="tab-content show" id="tc-usdc">
 
     <!-- 我的奖励 -->
-    <div class="panel">
+    <div class="panel" id="my-rewards">
       <div class="panel-head">
-        <div class="panel-t"><span class="dot g"></span>我的奖励</div>
+        <div class="panel-t"><span class="dot g"></span>每日奖励明细</div>
       </div>
       <div class="panel-body">
-        <div style="display:flex;align-items:baseline;gap:16px;padding:4px 0 20px;flex-wrap:wrap;">
-          <span style="font-size:13px;color:var(--t3);">活动期间累计获得奖励</span>
-          <span style="font-size:32px;font-weight:800;color:var(--green);letter-spacing:-.5px;">+16.31<span style="font-size:13px;font-weight:500;color:var(--t3);margin-left:4px;">USDC</span></span>
-          <span style="font-size:12px;color:var(--t4);">已参与 6 天</span>
-        </div>
-        <div class="tbl-head">
+        <div class="tbl-head" style="border-top:none;padding-top:0;">
           <div class="tbl-title">每日奖励明细</div>
           <div class="tbl-sub">按日期倒序 · 每页 10 条</div>
         </div>
