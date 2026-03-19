@@ -39,7 +39,10 @@ a:hover{text-decoration:underline;}
 .hero-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;}
 .hero-left{flex:1;z-index:1;}
 .hero-title{font-size:clamp(26px,3.5vw,36px);font-weight:900;color:var(--white);line-height:1.25;margin-bottom:10px;letter-spacing:-.5px;}
-.hero-sub{font-size:15px;color:var(--t2);margin-bottom:24px;}
+.hero-sub{font-size:15px;color:var(--t2);margin-bottom:16px;}
+.hero-intro{font-size:13px;color:var(--t2);line-height:1.8;margin-bottom:20px;}
+.hero-intro strong{color:var(--white);font-weight:700;}
+.hero-section-label{font-size:12px;color:var(--t3);font-weight:600;margin-bottom:6px;letter-spacing:.3px;}
 .hero-right{flex-shrink:0;width:260px;display:flex;align-items:center;justify-content:center;}
 
 /* Hero stats card */
@@ -159,7 +162,7 @@ table.t .g{color:var(--green);font-weight:700;}
 .rules h4{font-size:14px;font-weight:700;color:var(--white);margin:24px 0 8px;letter-spacing:-.2px;}
 .rules h4:first-child{margin-top:0;}
 .rules p,.rules li{font-size:13px;color:var(--t3);line-height:1.85;}
-.rules ol{padding-left:20px;}
+.rules ol,.rules ul{padding-left:20px;}
 .rules li{margin-bottom:4px;}
 .rules strong{color:var(--t2);font-weight:600;}
 .fq{font-size:13px;color:var(--t2);font-weight:600;margin:16px 0 4px;}
@@ -243,7 +246,9 @@ table.t .g{color:var(--green);font-weight:700;}
   <div class="hero-inner">
     <div class="hero-left">
       <h1 class="hero-title">edgeX x Circle: CCTP USDC Rewards Program - Season 1</h1>
-      <p class="hero-sub">新充值并持有 USDC，每日获得 USDC 奖励 · 限时限额，先到先得</p>
+      <p class="hero-sub">新充值并持有 USDC，每日获得 USDC 奖励</p>
+
+      <p class="hero-intro">本活动是 edgeX 与 Circle 基于 CCTP（Cross-Chain Transfer Protocol）共同推出的 USDC Rewards Program 第一期。活动期间，用户只需在 edgeX 现货账户中新充值并持有 USDC，即可每日获得 USDC 奖励，<strong>限时限额，先到先得</strong>。全平台参与额度上限为 <strong>30,000,000 USDC</strong>，额满即止。无需锁仓、无需申购、无需任何额外操作——持有即参与。</p>
 
       <div class="hero-time">
         <div class="ht-label">活动时间</div>
@@ -262,12 +267,11 @@ table.t .g{color:var(--green);font-weight:700;}
         </div>
       </div>
 
+      <div class="hero-section-label">参与条件</div>
       <div class="hero-bullets">
-        <div class="hb">全平台限额 <strong>30,000,000 USDC</strong>，额满即止，先到先得</div>
-        <div class="hb">每 10,000 USDC 新充值增量，每日奖励 <strong>≈ 2.74 USDC</strong></div>
-        <div class="hb">仅现货账户<strong>新充值并持有</strong>的 USDC 增量生效，无需锁仓</div>
-        <div class="hb">系统每小时快照，逐时计算奖励叠加，次日自动到账</div>
-        <div class="hb">可与积分空投等其他活动<strong>同时参与、奖励叠加</strong></div>
+        <div class="hb">活动公告发布时，edgeX 将对所有用户的现货账户 USDC 余额进行一次<strong>基准快照</strong></div>
+        <div class="hb">仅在基准快照之后<strong>新充值并持有</strong>在现货账户中的 USDC 增量部分，才计入奖励计算</div>
+        <div class="hb"><strong>仅现货账户生效</strong>，其他账户不计入</div>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
         <button class="rules-btn" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则</button>
@@ -473,19 +477,15 @@ table.t .g{color:var(--green);font-weight:700;}
       </div>
       <div class="panel-body">
         <div class="rules">
-          <h4>活动概述</h4>
-          <p>本活动是 edgeX 与 Circle 基于 CCTP（Cross-Chain Transfer Protocol）共同推出的 USDC 奖励计划第一期。我们将不定期推出后续期数活动，敬请关注。<strong>限时限额，先到先得。</strong></p>
-
           <h4>活动时间</h4>
           <p>2026 年 3 月 23 日 08:00 (UTC+8) — 2026 年 4 月 22 日 08:00 (UTC+8)</p>
 
           <h4>参与条件</h4>
-          <ol>
-            <li>活动公告发布时，系统将对所有用户的现货账户 USDC 余额进行一次<strong>基准快照</strong>。</li>
+          <ul>
+            <li>活动公告发布时，edgeX 将对所有用户的现货账户 USDC 余额进行一次<strong>基准快照</strong>。</li>
             <li>仅在基准快照之后<strong>新充值并持有</strong>在现货账户中的 USDC 增量部分，才计入奖励计算。</li>
-            <li>活动公告发布前已持有的 USDC 余额不参与本活动奖励计算。</li>
-            <li><strong>仅现货账户生效</strong>，合约账户、资金账户及其他账户中的 USDC 均不计入。</li>
-          </ol>
+            <li><strong>仅现货账户生效</strong>，其他账户不计入。</li>
+          </ul>
 
           <h4>活动规则</h4>
           <ol>
@@ -498,19 +498,23 @@ table.t .g{color:var(--green);font-weight:700;}
             <li>edgeX 保留对本活动规则的最终解释权，包括但不限于调整活动参数、提前结束活动、取消违规账户资格等。</li>
           </ol>
 
-          <h4>奖励示例</h4>
-          <p>假设用户基准快照余额为 2,000 USDC，活动期间充值至不同金额：</p>
+          <h4>每日奖励示例</h4>
+          <p>以下示例仅供参考，实际到账奖励以系统结算结果为准。</p>
           <table class="t" style="margin:14px 0;">
-            <thead><tr><th>基准余额</th><th>当前余额</th><th>有效增量</th><th>预计每日奖励</th></tr></thead>
+            <thead><tr><th>基准余额 (USDC)</th><th>新充值 (USDC)</th><th>有效增量 (USDC)</th><th>预计每日奖励 (USDC)</th></tr></thead>
             <tbody>
-              <tr><td>0</td><td>10,000</td><td>10,000</td><td class="g">≈ 2.74 USDC</td></tr>
-              <tr><td>0</td><td>5,000</td><td>5,000</td><td class="g">≈ 1.37 USDC</td></tr>
-              <tr><td>3,000</td><td>8,000</td><td>5,000</td><td class="g">≈ 1.37 USDC</td></tr>
-              <tr><td>5,000</td><td>5,000</td><td>0</td><td>0 USDC</td></tr>
-              <tr><td>0</td><td>20,000</td><td>10,000 (上限)</td><td class="g">≈ 2.74 USDC</td></tr>
+              <tr><td>0</td><td>10,000</td><td>10,000</td><td class="g">≈ 2.74</td></tr>
+              <tr><td>0</td><td>1,000</td><td>1,000</td><td class="g">≈ 0.27</td></tr>
+              <tr><td>0</td><td>100</td><td>100</td><td class="g">≈ 0.03</td></tr>
+              <tr><td>100</td><td>10,000</td><td>9,900</td><td class="g">≈ 2.71</td></tr>
+              <tr><td>100</td><td>1,000</td><td>1,000</td><td class="g">≈ 0.27</td></tr>
+              <tr><td>100</td><td>100</td><td>100</td><td class="g">≈ 0.03</td></tr>
+              <tr><td>1,000</td><td>10,000</td><td>9,000</td><td class="g">≈ 2.47</td></tr>
+              <tr><td>1,000</td><td>1,000</td><td>1,000</td><td class="g">≈ 0.27</td></tr>
+              <tr><td>1,000</td><td>100</td><td>100</td><td class="g">≈ 0.03</td></tr>
             </tbody>
           </table>
-          <p style="font-size:11px;color:var(--t4);">* 以上示例仅供参考，实际到账奖励以系统每日结算结果为准。</p>
+          <p style="font-size:11px;color:var(--t4);">* 有效增量 = min(新充值金额, 10,000 - 0) 或 min(当前余额 - 基准余额, 10,000)，上限 10,000 USDC。</p>
 
           <h4>常见问题</h4>
           <div class="fq">Q: 我需要做什么才能参与？</div>
