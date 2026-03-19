@@ -243,7 +243,7 @@ table.t .g{color:var(--green);font-weight:700;}
   <div class="hero-inner">
     <div class="hero-left">
       <h1 class="hero-title">edgeX x Circle: CCTP USDC Rewards Program - Season 1</h1>
-      <p class="hero-sub">充值并持有 USDC，每日获得 USDC 奖励</p>
+      <p class="hero-sub">新充值并持有 USDC，每日获得 USDC 奖励 · 限时限额，先到先得</p>
 
       <div class="hero-time">
         <div class="ht-label">活动时间</div>
@@ -263,10 +263,11 @@ table.t .g{color:var(--green);font-weight:700;}
       </div>
 
       <div class="hero-bullets">
-        <div class="hb">每 10,000 USDC 每日奖励 <strong>≈ 2.74 USDC</strong>，由 Circle 官方授权支持</div>
-        <div class="hb">现货账户充值并持有 USDC 即<strong>自动参与</strong>，无需锁仓、无需申购</div>
-        <div class="hb">每账户上限 <strong>10,000 USDC</strong>，全平台上限 <strong>30,000,000 USDC</strong></div>
-        <div class="hb">每日多次快照取<strong>最低余额</strong>为有效基数，奖励次日自动到账</div>
+        <div class="hb">全平台限额 <strong>30,000,000 USDC</strong>，额满即止，先到先得</div>
+        <div class="hb">每 10,000 USDC 新充值增量，每日奖励 <strong>≈ 2.74 USDC</strong></div>
+        <div class="hb">仅现货账户<strong>新充值并持有</strong>的 USDC 增量生效，无需锁仓</div>
+        <div class="hb">系统每小时快照，逐时计算奖励叠加，次日自动到账</div>
+        <div class="hb">可与积分空投等其他活动<strong>同时参与、奖励叠加</strong></div>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
         <button class="rules-btn" onclick="document.getElementById('usdc-rules').scrollIntoView({behavior:'smooth'})">查看完整活动规则</button>
@@ -275,7 +276,7 @@ table.t .g{color:var(--green);font-weight:700;}
     </div>
     <div class="hero-right" style="width:340px;align-self:stretch;">
       <div class="hero-card">
-        <div class="hc-label">每 10,000 USDC 每日奖励</div>
+        <div class="hc-label">每 10,000 USDC 新充值增量 每日奖励</div>
         <div class="hc-rate">≈ 2.74 <span>USDC / 天</span></div>
         <div class="hc-divider"></div>
         <div class="hc-label">您的累计奖励</div>
@@ -449,14 +450,14 @@ table.t .g{color:var(--green);font-weight:700;}
       </div>
       <div class="panel-body">
         <table class="t">
-          <thead><tr><th>日期</th><th>现货快照余额 (USDC)</th><th>奖励 (USDC)</th></tr></thead>
+          <thead><tr><th>日期</th><th>基准余额</th><th>当日均值余额</th><th>有效增量</th><th>奖励 (USDC)</th></tr></thead>
           <tbody>
-            <tr><td>2026-03-28</td><td>8,500.00</td><td class="g">≈ 2.33</td></tr>
-            <tr><td>2026-03-27</td><td>8,500.00</td><td class="g">+2.33</td></tr>
-            <tr><td>2026-03-26</td><td>10,000.00</td><td class="g">+2.74</td></tr>
-            <tr><td>2026-03-25</td><td>10,000.00</td><td class="g">+2.74</td></tr>
-            <tr><td>2026-03-24</td><td>10,000.00</td><td class="g">+2.74</td></tr>
-            <tr><td>2026-03-23</td><td>4,200.00</td><td class="g">+1.15</td></tr>
+            <tr><td>2026-03-28</td><td>2,000.00</td><td>10,500.00</td><td>8,500.00</td><td class="g">≈ 2.33</td></tr>
+            <tr><td>2026-03-27</td><td>2,000.00</td><td>10,500.00</td><td>8,500.00</td><td class="g">+2.33</td></tr>
+            <tr><td>2026-03-26</td><td>2,000.00</td><td>12,000.00</td><td>10,000.00</td><td class="g">+2.74</td></tr>
+            <tr><td>2026-03-25</td><td>2,000.00</td><td>12,000.00</td><td>10,000.00</td><td class="g">+2.74</td></tr>
+            <tr><td>2026-03-24</td><td>2,000.00</td><td>12,000.00</td><td>10,000.00</td><td class="g">+2.74</td></tr>
+            <tr><td>2026-03-23</td><td>2,000.00</td><td>6,200.00</td><td>4,200.00</td><td class="g">+1.15</td></tr>
           </tbody>
         </table>
         <div class="pager">
@@ -472,46 +473,63 @@ table.t .g{color:var(--green);font-weight:700;}
       </div>
       <div class="panel-body">
         <div class="rules">
+          <h4>活动概述</h4>
+          <p>本活动是 edgeX 与 Circle 基于 CCTP（Cross-Chain Transfer Protocol）共同推出的 USDC 奖励计划第一期。我们将不定期推出后续期数活动，敬请关注。<strong>限时限额，先到先得。</strong></p>
+
           <h4>活动时间</h4>
           <p>2026 年 3 月 23 日 00:00 (UTC) — 2026 年 4 月 22 日 00:00 (UTC)</p>
-          <h4>参与方式</h4>
+
+          <h4>参与条件</h4>
           <ol>
-            <li>用户在 edgeX <strong>现货账户</strong>中充值并持有 USDC 即自动参与，无需任何操作。仅现货账户生效，其他账户不计入。</li>
-            <li>系统将每日对符合条件的 USDC 余额进行快照统计。</li>
-            <li>奖励根据用户当日有效 USDC 余额计算，以 USDC 形式自动发放至现货账户。</li>
+            <li>活动公告发布时，系统将对所有用户的现货账户 USDC 余额进行一次<strong>基准快照</strong>。</li>
+            <li>仅在基准快照之后<strong>新充值并持有</strong>在现货账户中的 USDC 增量部分，才计入奖励计算。</li>
+            <li>活动公告发布前已持有的 USDC 余额不参与本活动奖励计算。</li>
+            <li><strong>仅现货账户生效</strong>，合约账户、资金账户及其他账户中的 USDC 均不计入。</li>
           </ol>
+
           <h4>活动规则</h4>
           <ol>
-            <li>每个 UID 最多 <strong>10,000 USDC</strong> 参与每日奖励计算，超出部分不计入。</li>
-            <li>全平台合计最多 <strong>30,000,000 USDC</strong> 参与本活动。达到上限后新增部分按先到先得原则排序。</li>
-            <li>奖励按日计算，通常于次日自动发放至用户现货账户。</li>
-            <li>系统每日在多个时间点进行余额快照，<strong>取当日最低快照余额</strong>为有效基数。建议保持全天持有以获最优奖励。</li>
-            <li>edgeX 保留对本活动规则的最终解释权，包括但不限于调整活动参数、取消违规账户资格等。</li>
+            <li><strong>基准快照</strong>：活动公告发布时，系统自动记录每位用户现货账户的 USDC 余额作为基准值。此后新充值并持有的 USDC 增量（即当前余额 - 基准值）为有效参与金额。</li>
+            <li><strong>每账户上限</strong>：每个账户最多 <strong>10,000 USDC</strong> 增量计入奖励计算，超出部分不计入。</li>
+            <li><strong>全平台上限</strong>：全平台合计最多 <strong>30,000,000 USDC</strong> 参与本活动。额度先到先得，额满即止。</li>
+            <li><strong>快照与计算</strong>：活动期间，系统每小时对用户现货账户 USDC 余额进行一次快照。每次快照的有效增量金额将用于计算该小时的奖励，各小时奖励逐一叠加，形成每日总奖励。</li>
+            <li><strong>奖励发放</strong>：每日奖励于次日自动发放至用户现货账户，以 USDC 形式到账。</li>
+            <li><strong>活动叠加</strong>：本活动与 edgeX 平台其他活动（如积分空投活动、持币奖励等）可同时参与、奖励叠加，互不影响。</li>
+            <li>edgeX 保留对本活动规则的最终解释权，包括但不限于调整活动参数、提前结束活动、取消违规账户资格等。</li>
           </ol>
-          <h4>每日奖励说明</h4>
-          <p>每持有 10,000 USDC，每日可获得约 <strong>2.74 USDC</strong> 奖励。奖励按有效余额等比例计算。</p>
+
+          <h4>奖励示例</h4>
+          <p>假设用户基准快照余额为 2,000 USDC，活动期间充值至不同金额：</p>
           <table class="t" style="margin:14px 0;">
-            <thead><tr><th>当日有效余额</th><th>预计每日奖励</th></tr></thead>
+            <thead><tr><th>基准余额</th><th>当前余额</th><th>有效增量</th><th>预计每日奖励</th></tr></thead>
             <tbody>
-              <tr><td>10,000 USDC</td><td class="g">≈ 2.74 USDC</td></tr>
-              <tr><td>5,000 USDC</td><td class="g">≈ 1.37 USDC</td></tr>
-              <tr><td>1,000 USDC</td><td class="g">≈ 0.27 USDC</td></tr>
-              <tr><td>100 USDC</td><td class="g">≈ 0.03 USDC</td></tr>
+              <tr><td>0</td><td>10,000</td><td>10,000</td><td class="g">≈ 2.74 USDC</td></tr>
+              <tr><td>0</td><td>5,000</td><td>5,000</td><td class="g">≈ 1.37 USDC</td></tr>
+              <tr><td>3,000</td><td>8,000</td><td>5,000</td><td class="g">≈ 1.37 USDC</td></tr>
+              <tr><td>5,000</td><td>5,000</td><td>0</td><td>0 USDC</td></tr>
+              <tr><td>0</td><td>20,000</td><td>10,000 (上限)</td><td class="g">≈ 2.74 USDC</td></tr>
             </tbody>
           </table>
           <p style="font-size:11px;color:var(--t4);">* 以上示例仅供参考，实际到账奖励以系统每日结算结果为准。</p>
+
           <h4>常见问题</h4>
           <div class="fq">Q: 我需要做什么才能参与？</div>
-          <div class="fa">A: 无需任何操作。只要您在 edgeX 现货账户中充值并持有 USDC，即自动参与。仅现货账户生效。</div>
+          <div class="fa">A: 在活动期间向 edgeX 现货账户充值 USDC 即可自动参与，无需额外操作。仅活动公告发布后的新充值增量计入奖励。</div>
+          <div class="fq">Q: 活动公告前已经持有的 USDC 能获得奖励吗？</div>
+          <div class="fa">A: 不能。系统在活动公告发布时会做一次基准快照，仅此后新充值并持有的增量部分参与奖励计算。</div>
           <div class="fq">Q: 奖励什么时候到账？</div>
-          <div class="fa">A: 每日奖励通常于次日自动发放至您的现货账户。您可以在「我的奖励」中查看发放记录。</div>
-          <div class="fq">Q: 如果我持有超过 10,000 USDC 会怎样？</div>
-          <div class="fa">A: 超出部分不参与奖励计算，但可正常用于交易。</div>
-          <div class="fq">Q: USDC 用于交易后还能获得奖励吗？</div>
-          <div class="fa">A: 系统取当日最低快照余额为有效基数。交易导致余额降低时以最低值为准，次日恢复正常。</div>
+          <div class="fa">A: 每日奖励通常于次日自动发放至您的现货账户。</div>
+          <div class="fq">Q: 如果我充值超过 10,000 USDC 会怎样？</div>
+          <div class="fa">A: 超出 10,000 USDC 增量的部分不参与奖励计算，但可正常用于交易。</div>
           <div class="fq">Q: 合约账户的 USDC 算吗？</div>
-          <div class="fa">A: 不算。仅现货账户中充值并持有的 USDC 计入奖励计算，合约账户及其他账户不生效。</div>
-          <div class="disc">风险提示：本活动为 edgeX 平台推广活动，由 Circle 官方授权支持，奖励以 USDC 形式发放。加密资产存在市场风险，请在充分了解后参与。实际到账奖励以系统每日结算结果为准。edgeX 保留对本活动规则的最终解释权。</div>
+          <div class="fa">A: 不算。仅现货账户中新充值并持有的 USDC 计入奖励计算，合约账户及其他账户不生效。</div>
+          <div class="fq">Q: 这个活动和其他 edgeX 活动冲突吗？</div>
+          <div class="fa">A: 不冲突。本活动与 edgeX 平台其他活动（如积分空投活动、持币奖励等）可同时参与，奖励叠加，互不影响。</div>
+          <div class="fq">Q: 全平台 30,000,000 USDC 额度用完了怎么办？</div>
+          <div class="fa">A: 额度先到先得，额满即止。</div>
+          <div class="fq">Q: 还会有后续活动吗？</div>
+          <div class="fa">A: 本活动为 edgeX 与 Circle 基于 CCTP 共同推出的第一期奖励计划，我们将不定期推出后续期数活动，敬请关注官方公告。</div>
+          <div class="disc">风险提示：本活动为 edgeX 与 Circle 基于 CCTP 共同推出的推广活动，奖励以 USDC 形式发放。加密资产存在市场风险，请在充分了解后参与。实际到账奖励以系统每日结算结果为准。edgeX 保留对本活动规则的最终解释权，包括但不限于调整活动参数、提前结束活动、取消违规账户资格等。</div>
         </div>
       </div>
     </div>
