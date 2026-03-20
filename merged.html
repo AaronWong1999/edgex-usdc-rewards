@@ -454,22 +454,18 @@ table.t .g{color:var(--green);font-weight:700;}
         <div class="panel-t"><span class="dot g"></span>每日奖励明细</div>
       </div>
       <div class="panel-body">
-        <div style="display:flex;border-bottom:1px solid var(--border);">
-          <div style="flex:1;padding:14px 16px;">
-            <div style="font-size:11px;color:var(--t4);margin-bottom:6px;">我的奖励额度（已获取/待获取）</div>
-            <div style="font-size:13px;color:var(--t2);">0 / 10,000</div>
-            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;">
-              <div style="flex:1;background:var(--surface2);border-radius:4px;height:4px;overflow:hidden;max-width:120px;"><div style="width:0%;height:100%;background:var(--green);border-radius:4px;"></div></div>
-              <span style="font-size:11px;color:var(--t4);">0%</span>
-            </div>
+        <div style="border-bottom:1px solid var(--border);">
+          <div style="display:flex;align-items:baseline;padding:10px 16px 4px;">
+            <div style="font-size:11px;color:var(--t4);flex:1;">我的奖励额度（已获取/待获取）</div>
+            <div style="font-size:11px;color:var(--t4);flex:1;">平台总奖励额度（已产生/剩余）</div>
           </div>
-          <div style="flex:1;padding:14px 16px;border-left:1px solid var(--border);">
-            <div style="font-size:11px;color:var(--t4);margin-bottom:6px;">平台总奖励额度（已产生/剩余）</div>
-            <div style="font-size:13px;color:var(--t2);">0 / 30,000,000</div>
-            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;">
-              <div style="flex:1;background:var(--surface2);border-radius:4px;height:4px;overflow:hidden;max-width:120px;"><div style="width:2.37%;height:100%;background:var(--green);border-radius:4px;"></div></div>
-              <span style="font-size:11px;color:var(--t4);">2.37%</span>
-            </div>
+          <div style="display:flex;align-items:center;padding:0 16px 12px;gap:16px;">
+            <div style="font-size:13px;color:var(--t2);white-space:nowrap;">0 / 10,000</div>
+            <div style="flex:0 0 100px;background:var(--surface2);border-radius:4px;height:4px;overflow:hidden;"><div style="width:0%;height:100%;background:var(--green);border-radius:4px;"></div></div>
+            <span style="font-size:11px;color:var(--t4);white-space:nowrap;">0%</span>
+            <div style="font-size:13px;color:var(--t2);white-space:nowrap;margin-left:auto;">0 / 30,000,000</div>
+            <div style="flex:0 0 100px;background:var(--surface2);border-radius:4px;height:4px;overflow:hidden;"><div style="width:0%;height:100%;background:var(--green);border-radius:4px;"></div></div>
+            <span style="font-size:11px;color:var(--t4);white-space:nowrap;">0%</span>
           </div>
         </div>
         <table class="t">
